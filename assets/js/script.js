@@ -10,25 +10,29 @@ $(".saveBtn").on("click", function () {
   // get values
   var recordedInput = $(this).siblings(".text-input").val();
   var recordedTime = $(this).parent().attr("id");
-  localStorage.setItem (recordedTime, recordedInput);
+  localStorage.setItem(recordedTime, recordedInput);
 
 })
 
 // Retrieving saved items from local storage
 
-$("#9 .text-input").val(localStorage.getItem("9"));
-$("#10 .text-input").val(localStorage.getItem("10"));
-$("#11 .text-input").val(localStorage.getItem("11"));
-$("#12 .text-input").val(localStorage.getItem("12"));
-$("#13 .text-input").val(localStorage.getItem("13"));
-$("#14 .text-input").val(localStorage.getItem("14"));
-$("#15 .text-input").val(localStorage.getItem("15"));
-$("#16 .text-input").val(localStorage.getItem("16"));
-$("#17 .text-input").val(localStorage.getItem("17"));
+function retrieveSavedItems() {
+
+  businesshours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
+
+  for (businesshoursindex = 0; businesshoursindex < 9; businesshoursindex++) {
+
+    $("#" + businesshours[businesshoursindex] + " .text-input").val(localStorage.getItem(businesshours[businesshoursindex]));
+
+  }
+}
+
+//execute save function
+retrieveSavedItems();
 
 // Delete Button
 $(".deleteBtn").on("click", function () {
-  
+
   var recordedTime = $(this).parent().attr("id");
 
   localStorage.removeItem(recordedTime);
@@ -46,27 +50,27 @@ function timeComparison() {
 
 
   $(".time-block").each(function () {
-    var scheduledTime =parseInt($(this).attr("id"));
+    var scheduledTime = parseInt($(this).attr("id"));
 
     // check to see if scheduled time is equal to current time
-      if (scheduledTime < currentTime) {
+    if (scheduledTime < currentTime) {
       $(this).removeClass("future");
       $(this).removeClass("present");
       $(this).addClass("past");
-      }
-      else if (scheduledTime === currentTime) {
+    }
+    else if (scheduledTime === currentTime) {
       $(this).removeClass("past");
       $(this).removeClass("future");
       $(this).addClass("present");
-      }
-      else {
+    }
+    else {
       $(this).removeClass("present");
       $(this).removeClass("past");
       $(this).addClass("future");
-      }
-    })
-  }
+    }
+  })
+}
 
 
-  // Execute time function
-  timeComparison();
+// Execute time function
+timeComparison();
