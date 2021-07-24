@@ -15,6 +15,7 @@ $(".saveBtn").on("click", function () {
 })
 
 // Retrieving saved items from local storage
+
 $("#9 .text-input").val(localStorage.getItem("9"));
 $("#10 .text-input").val(localStorage.getItem("10"));
 $("#11 .text-input").val(localStorage.getItem("11"));
@@ -24,6 +25,17 @@ $("#14 .text-input").val(localStorage.getItem("14"));
 $("#15 .text-input").val(localStorage.getItem("15"));
 $("#16 .text-input").val(localStorage.getItem("16"));
 $("#17 .text-input").val(localStorage.getItem("17"));
+
+// Delete Button
+$(".deleteBtn").on("click", function () {
+  
+  var recordedTime = $(this).parent().attr("id");
+
+  localStorage.removeItem(recordedTime);
+
+  $(this).siblings(".text-input").val("");
+
+})
 
 
 //defining function to compare colors
