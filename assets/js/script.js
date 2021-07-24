@@ -30,7 +30,7 @@ $("#17 .text-input").val(localStorage.getItem("17"));
 function timeComparison() {
 
   // current time
-  var currentTime = new Date().getHours();
+  var currentTime = moment().hour();
 
 
   $(".time-block").each(function () {
