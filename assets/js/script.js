@@ -34,7 +34,7 @@ function timeComparison() {
 
 
   $(".time-block").each(function () {
-    var scheduledTime =($(this).attr("id"));
+    var scheduledTime =parseInt($(this).attr("id"));
 
     // check to see if scheduled time is equal to current time
       if (scheduledTime < currentTime) {
