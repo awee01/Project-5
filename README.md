@@ -9,4 +9,5 @@ Information can be saved in the time block by pressing the save button. This dat
 There is also a delete button that deletes the data in the text input and the local storage
 
 
+![screenshot](https://user-images.githubusercontent.com/85651950/126878078-151df191-aee4-46b3-89ce-dcea0d1ab3db.png)
 
