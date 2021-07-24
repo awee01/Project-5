@@ -18,11 +18,11 @@ $(".saveBtn").on("click", function () {
 
 function retrieveSavedItems() {
 
-  businesshours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
+  bh = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 
-  for (businesshoursindex = 0; businesshoursindex < 9; businesshoursindex++) {
+  for (bhindex = 0; bhindex < 9; bhindex++) {
 
-    $("#" + businesshours[businesshoursindex] + " .text-input").val(localStorage.getItem(businesshours[businesshoursindex]));
+    $("#" + bh[bhindex] + " .text-input").val(localStorage.getItem(bh[bhindex]));
 
   }
 }
