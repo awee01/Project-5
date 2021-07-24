@@ -1,5 +1,3 @@
-
-
 //get current date
 var currentDay = moment().format("dddd, MMMM Do");
 
@@ -16,11 +14,24 @@ $(".saveBtn").on("click", function () {
 
 })
 
+// Retrieving saved items from local storage
+$("#9 .text-input").val(localStorage.getItem("9"));
+$("#10 .text-input").val(localStorage.getItem("10"));
+$("#11 .text-input").val(localStorage.getItem("11"));
+$("#12 .text-input").val(localStorage.getItem("12"));
+$("#13 .text-input").val(localStorage.getItem("13"));
+$("#14 .text-input").val(localStorage.getItem("14"));
+$("#15 .text-input").val(localStorage.getItem("15"));
+$("#16 .text-input").val(localStorage.getItem("16"));
+$("#17 .text-input").val(localStorage.getItem("17"));
+
+
 //defining function to compare colors
 function timeComparison() {
 
   // current time
-  var currentTime = moment().hour();
+  var currentTime = new Date().getHours();
+
 
   $(".time-block").each(function () {
     var scheduledTime =($(this).attr("id"));
@@ -40,21 +51,9 @@ function timeComparison() {
       $(this).removeClass("present");
       $(this).removeClass("past");
       $(this).addClass("future");
-
       }
     })
   }
-
-  // Retrieving saved items from local storage
-  $("#9 .text-input").val(localStorage.getItem("9"));
-  $("#10 .text-input").val(localStorage.getItem("10"));
-  $("#11 .text-input").val(localStorage.getItem("11"));
-  $("#12 .text-input").val(localStorage.getItem("12"));
-  $("#13 .text-input").val(localStorage.getItem("13"));
-  $("#14 .text-input").val(localStorage.getItem("14"));
-  $("#15 .text-input").val(localStorage.getItem("15"));
-  $("#16 .text-input").val(localStorage.getItem("16"));
-  $("#17 .text-input").val(localStorage.getItem("17"));
 
 
   // Execute time function
