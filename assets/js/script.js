@@ -15,6 +15,7 @@ $(".saveBtn").on("click", function () {
 })
 
 // Retrieving saved items from local storage
+// bh is short for business hours. Setting array and for loop to save data
 
 function retrieveSavedItems() {
 
@@ -40,7 +41,6 @@ $(".deleteBtn").on("click", function () {
   $(this).siblings(".text-input").val("");
 
 })
-
 
 //defining function to compare colors
 function timeComparison() {
@@ -70,7 +70,6 @@ function timeComparison() {
     }
   })
 }
-
 
 // Execute time function
 timeComparison();
